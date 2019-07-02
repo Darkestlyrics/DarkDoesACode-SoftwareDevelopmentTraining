@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Software_Dev_Training {
+namespace SRPAssignment {
     class Program {
         static void Main(string[] args)
         {
