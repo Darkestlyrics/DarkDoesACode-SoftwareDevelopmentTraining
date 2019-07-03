@@ -7,23 +7,17 @@
 // 
 #endregion
 
-using System.Net.NetworkInformation;
-
 namespace OCPExample.Classes
 {
     public class Accountv3
     {
-            private string accountNumber;
+            private readonly string accountNumber;
 
-            public string AccountNumber {
-                get => accountNumber;
-            }
+            public string AccountNumber => accountNumber;
 
-            private string accountName;
+            private readonly string accountName;
 
-            public string AccountName {
-                get => accountName;
-            }
+            public string AccountName => accountName;
 
             private double accountBalance;
 

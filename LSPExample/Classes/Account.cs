@@ -18,19 +18,13 @@ namespace LSPExample.Classes
      */
     public class Accountv3 : IAccount
     {
-        private string accountNumber;
+        private readonly string accountNumber;
 
-        public string AccountNumber
-        {
-            get => accountNumber;
-        }
+        public string AccountNumber => accountNumber;
 
-        private string accountName;
+        private readonly string accountName;
 
-        public string AccountName
-        {
-            get => accountName;
-        }
+        public string AccountName => accountName;
 
         public double AccountBalance { get; }
 

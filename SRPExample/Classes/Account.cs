@@ -7,8 +7,6 @@
 // 
 #endregion
 
-using System;
-
 namespace SRPExample.Classes {
     /// <summary>
     /// Simple Account Class
@@ -23,26 +21,19 @@ namespace SRPExample.Classes {
     /// <summary>
     /// Account Class version 2
     /// has properties and a constructor
-    /// Properties have set methods that allow external classes to change them however
     /// </summary>
     public class Accountv2 {
-        private string accountNumber;
+        private readonly string accountNumber;
 
-        public string AccountNumber {
-            get => accountNumber;
-        }
+        public string AccountNumber => accountNumber;
 
-        private string accountName;
+        private readonly string accountName;
 
-        public string AccountName {
-            get => accountName;
-        }
+        public string AccountName => accountName;
 
-        private double accountBalance;
+        private readonly double accountBalance;
 
-        public double AccountBalance {
-            get => accountBalance;
-        }
+        public double AccountBalance => accountBalance;
 
         public Accountv2()
         {
@@ -63,17 +54,14 @@ namespace SRPExample.Classes {
     /// manages it's own properties
     /// </summary>
     public class Accountv3 {
-        private string accountNumber;
+        private readonly string accountNumber;
 
-        public string AccountNumber {
-            get => accountNumber;
-        }
+        public string AccountNumber => accountNumber;
 
-        private string accountName;
+        private readonly string accountName;
 
-        public string AccountName {
-            get => accountName;
-        }
+        public string AccountName => accountName;
+
         /// <summary>
         /// Has bee changed to private as it does not need to be directly called at any stage.
         /// The balance method has been implemented to show this if the criteria are met

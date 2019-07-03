@@ -21,7 +21,7 @@ namespace ISPExample {
 
 
     class Program {
-        private static List<IAccountBase> _accounts = new List<IAccountBase>()
+        private static readonly List<IAccountBase> _accounts = new List<IAccountBase>()
         {
             new Accountv3("1234567890", "Test Account 1", 10000),
             new Accountv3("1234567891", "Test Account 2", 1000),
@@ -33,12 +33,12 @@ namespace ISPExample {
             new Accountv7("1234567899","Overdraft Account",10000)
         };
 
-        private static bool _isRunning = true;
+        private static readonly bool _isRunning = true;
         private static bool _loggedIn = false;
         static void Main(string[] args)
         {
-            string input = "";
-            IAccountBase currentAccount = null;
+            string input;
+            IAccountBase currentAccount;
             while (_isRunning)
             {
                 Console.WriteLine("Welcome to Test Bank's new ATM Service, Please enter your account details");
@@ -85,7 +85,7 @@ namespace ISPExample {
         static bool WithDrawal(IAccountBase acc)
         {
             Console.WriteLine("How much would you like to Withdraw");
-            double amt = 0.00;
+            double amt;
             try
             {
                 double.TryParse(Console.ReadLine(), out amt);
@@ -101,7 +101,7 @@ namespace ISPExample {
         static bool Deposit(IAccountBase acc)
         {
             Console.WriteLine("How much would you like to Deposit");
-            double amt = 0.00;
+            double amt;
             try
             {
                 double.TryParse(Console.ReadLine(), out amt);

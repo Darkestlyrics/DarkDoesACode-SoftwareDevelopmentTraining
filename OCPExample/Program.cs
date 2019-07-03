@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using OCPExample.Classes;
 
 namespace OCPExample {
@@ -20,7 +19,7 @@ namespace OCPExample {
 
         //////////////////////////// LEGACY CODE  /////////////////////////////////////////////////
 
-        private static List<Accountv3> _accounts = new List<Accountv3>()
+        private static readonly List<Accountv3> _accounts = new List<Accountv3>()
         {
             new Accountv3("1234567890", "Test Account 1", 10000),
             new Accountv3("1234567891", "Test Account 2", 1000),
@@ -29,17 +28,15 @@ namespace OCPExample {
             new Accountv4()
         };
 
-        private static bool _isRunning = true;
+        private static readonly bool _isRunning = true;
         private static bool _loggedIn = false;
-        static void Main(string[] args)
+        static void Main()
         {
-            string input = "";
-            Accountv3 currentAccount = null;
             while (_isRunning)
             {
                 Console.WriteLine("Welcome to Test Bank's new ATM Service, Please enter your account details");
                 string temp = Console.ReadLine();
-                currentAccount = Login(temp);
+                var currentAccount = Login(temp);
                 if (currentAccount != null)
                     _loggedIn = true;
                 else 
@@ -47,7 +44,7 @@ namespace OCPExample {
                 while (_loggedIn)
                 {
                     DisplayOptions();
-                    input = Console.ReadLine();
+                    var input = Console.ReadLine();
                     switch (input)
                     {
                         case "1":
@@ -81,9 +78,9 @@ namespace OCPExample {
         static bool WithDrawal(Accountv3 acc)
         {
             Console.WriteLine("How much would you like to Withdraw");
-            double amt = 0.00;
             try
             {
+                double amt;
                 double.TryParse(Console.ReadLine(), out amt);
                 acc.DebitAccount(amt);
                 return true;

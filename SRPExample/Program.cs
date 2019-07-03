@@ -1,5 +1,4 @@
-﻿using System;
-using SRPExample.Classes;
+﻿using SRPExample.Classes;
 
 namespace SRPExample {
     class Program {

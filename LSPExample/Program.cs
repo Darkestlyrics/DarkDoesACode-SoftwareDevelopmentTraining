@@ -35,7 +35,7 @@ namespace LSPExample {
              * the legacy code
              */
 
-        private static List<IAccount> _accounts = new List<IAccount>()
+        private static readonly List<IAccount> _accounts = new List<IAccount>()
         {
             new Accountv3("1234567890", "Test Account 1", 10000),
             new Accountv3("1234567891", "Test Account 2", 1000),
@@ -45,11 +45,10 @@ namespace LSPExample {
             new Accountv5("1234567999","new V5 Account")
         };
 
-        private static bool _isRunning = true;
+        private static readonly bool _isRunning = true;
         private static bool _loggedIn = false;
         static void Main(string[] args)
         {
-            string input = "";
             IAccount currentAccount = null;
             while (_isRunning)
             {
@@ -63,7 +62,7 @@ namespace LSPExample {
                 while (_loggedIn)
                 {
                     DisplayOptions();
-                    input = Console.ReadLine();
+                    var input = Console.ReadLine();
                     switch (input)
                     {
                         case "1":
@@ -97,7 +96,7 @@ namespace LSPExample {
         static bool WithDrawal(IAccount acc)
         {
             Console.WriteLine("How much would you like to Withdraw");
-            double amt = 0.00;
+            double amt;
             try
             {
                 double.TryParse(Console.ReadLine(), out amt);

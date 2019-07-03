@@ -7,8 +7,6 @@
 // 
 #endregion
 
-using System.Dynamic;
-
 namespace ISPExample.Interfaces
 {
 
