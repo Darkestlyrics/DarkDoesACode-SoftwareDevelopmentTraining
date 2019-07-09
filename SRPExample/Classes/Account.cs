@@ -63,7 +63,7 @@ namespace SRPExample.Classes {
         public string AccountName => accountName;
 
         /// <summary>
-        /// Has bee changed to private as it does not need to be directly called at any stage.
+        /// Has been changed to private as it does not need to be directly called at any stage.
         /// The balance method has been implemented to show this if the criteria are met
         /// </summary>
         private double accountBalance;
