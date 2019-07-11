@@ -15,6 +15,7 @@ namespace ISPExample.Classes
     {
 
         private double _accountBalance;
+        public double OverDraftLimit { get; protected set; }
 
         /*
          * Here we've overridden the base class' virtual method with our own implementation of it to support the overdraft
@@ -30,7 +31,7 @@ namespace ISPExample.Classes
 
 
 
-        public double OverDraftLimit { get; protected set; }
+ 
 
         public OverdraftAccount(string accountNumber, string accountName, double overdraftLimit) : base(accountNumber, accountName)
         {

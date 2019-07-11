@@ -1,10 +1,13 @@
 ﻿using System;
+using SRPAssignment.Classes;
 
 namespace SRPAssignment {
     class Program {
         static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Vehicle vehicle = new Vehicle("Test","vroomvroom",100,10);
+            vehicle.Start();
+            vehicle.Stop();
         }
     }
 }
