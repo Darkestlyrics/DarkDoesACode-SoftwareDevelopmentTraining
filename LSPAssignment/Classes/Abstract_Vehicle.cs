@@ -20,27 +20,44 @@ namespace LSPAssignment.Classes
         public string Model { get; set; }
         public int MaxSpeed { get; set; }
         public int Acceleration { get; set; }
-        private bool _isMoving { get; set; }
-        public void Start()
+        private bool _isOn { get; set; }
+
+        public Abstract_Vehicle(string make, string model, int maxSpeed, int acceleration)
         {
-            if (!_isMoving)
+            Make = make;
+            Model = model;
+            MaxSpeed = maxSpeed;
+            Acceleration = acceleration;
+            
+        }
+        public virtual void Start()
+        {
+            if (_isOn)
             {
-                Console.WriteLine($"{ToString()} is moving");
-                _isMoving = true;
+                Console.WriteLine($"{ToString()} is already on");
+            }
+            else
+            {
+                Console.WriteLine($"{ToString()} is on");
+                _isOn = true;
             }
         }
 
 
-        public void Stop()
+        public virtual void Stop()
         {
-            if (_isMoving)
+            if (!_isOn)
             {
-                Console.WriteLine($"{ToString()} is not moving");
-                _isMoving = false;
+                Console.WriteLine($"{ToString()} is already off");
+            }
+            else
+            {
+                Console.WriteLine($"{ToString()} is off");
+                _isOn = false;
             }
         }
 
-        public string ToString()
+        public virtual string ToString()
         {
             return $"Vehicle: {Make} - {Model}";
         }

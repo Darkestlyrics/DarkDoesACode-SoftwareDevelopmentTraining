@@ -14,7 +14,7 @@ namespace OCPAssignment.Classes {
         public string Model { get; set; }
         public int MaxSpeed { get; set; }
         public int Acceleration { get; set; }
-        private bool _isMoving = false;
+        private bool _isOn = false;
 
 
         public void Start()
